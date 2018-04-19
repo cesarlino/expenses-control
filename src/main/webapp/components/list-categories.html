@@ -1,0 +1,12 @@
+<div class="container" ng-controller="CategoryController">
+    <div class="page-header">
+        <h1>Categories</h1>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="category in categories"><strong>{{category.name}}</strong><br/>
+            <small><a href="{{category._links.self.href}}"><code>{{category._links.self.href}}</code></a></small>
+        </li>
+    </ul>
+
+</div>

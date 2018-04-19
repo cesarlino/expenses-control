@@ -1,0 +1,11 @@
+<div class="container" ng-controller="AccountController">
+    <div class="page-header">
+        <h1>Accounts</h1>
+    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="account in accounts"><strong>{{account.name}}</strong><br/>
+            <small><a href="{{account._links.self.href}}"><code>{{account._links.self.href}}</code></a></small>
+        </li>
+    </ul>
+</div>
