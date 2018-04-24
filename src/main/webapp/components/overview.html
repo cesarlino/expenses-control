@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-2 panel panel-primary" ng-controller="AccountController">
+        <ul class="list-group" ng-repeat="account in accounts">
+            <li class="list-group-item">
+                <h4 class="list-group-item-heading">{{account.name}}</h4>
+                <h3 class="list-group-item-text">{{account.balance | currency}}</h3>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-10 panel" ng-controller="TransactionController">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="transaction in transactions">
+                <div class="row">
+                    <div class="column col-md-2">
+                        {{transaction.when | date}}
+                    </div>
+                    <div class="column col-md-8">
+                        <a href="{{transaction._links.self.href}}"><strong>{{transaction.name}}</strong></a>
+                    </div>
+                    <div class="column col-md-2">
+                        <strong>{{transaction.amount | currency}}</strong>
+                    </div>
+                    <small>{{transaction.category}}</small>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

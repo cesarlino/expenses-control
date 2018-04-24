@@ -1,0 +1,39 @@
+<div class="container" ng-controller="AccountController">
+    <div class="page-header">
+        <h1>Add Account</h1>
+    </div>
+
+    <div id="new-account">
+        <div class="content">
+            <ul>
+                <li>
+                    <label for="accountName">Account Name</label>
+                    <input type="text" name="accountName" id="accountName" placeholder="xxxxx" maxlength="50" tabindex="1" autocomplete="off">
+                </li>
+                <li>
+                    <label for="accountType">Account Type</label>
+                    <select id="accountType" tabindex="2">
+                        <option>--Select--</option>
+                        <option value="CURRENT">Current Account</option>
+                        <option value="SAVINGS">Savings</option>
+                        <option value="CREDIT_CARD">Credit Card</option>
+                        <option value="CASH">Cash</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="balance">Balance</label>
+                    <input type="text" name="balance" id="balance" class="value" maxlength="20" placeholder="0.00" tabindex="3">
+                </li>
+            </ul>
+            <p class="error"></p>
+            <p class="controls">
+                <button type="button" class="btn" tabindex="5">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+                <button type="button" class="btn btn-primary" tabindex="4">
+                    <i class="glyphicon glyphicon-floppy-saved"></i>
+                </button>
+            </p>
+        </div>
+    </div>
+</div>

@@ -7,13 +7,13 @@ var app = angular.module('spring-data-rest-sample', ['ui.bootstrap', 'ngResource
                 templateUrl: 'components/list-transactions.html'
             })
             .when('/accounts', {
-                templateUrl: 'components/list-accounts.html'
+                templateUrl: 'components/account/list-accounts.html'
             })
             .when('/categories', {
                 templateUrl: 'components/list-categories.html'
             })
             .otherwise({
-                redirectTo: '/'
+                templateUrl: 'components/overview.html'
             });
     }])
     .controller('TransactionController', function ($scope, $http, SpringDataRestAdapter) {
@@ -23,7 +23,6 @@ var app = angular.module('spring-data-rest-sample', ['ui.bootstrap', 'ngResource
 
         SpringDataRestAdapter.process(httpPromise).then(function (processedResponse) {
             $scope.transactions = processedResponse._embeddedItems;
-            $scope.processedResponse = angular.toJson(processedResponse, true);
         });
     })
     .controller('AccountController', function ($scope, $http, SpringDataRestAdapter) {
@@ -33,7 +32,6 @@ var app = angular.module('spring-data-rest-sample', ['ui.bootstrap', 'ngResource
 
         SpringDataRestAdapter.process(httpPromise).then(function (processedResponse) {
             $scope.accounts = processedResponse._embeddedItems;
-            $scope.processedResponse = angular.toJson(processedResponse, true);
         });
     })
     .controller('CategoryController', function ($scope, $http, SpringDataRestAdapter) {
@@ -43,6 +41,5 @@ var app = angular.module('spring-data-rest-sample', ['ui.bootstrap', 'ngResource
 
         SpringDataRestAdapter.process(httpPromise).then(function (processedResponse) {
             $scope.categories = processedResponse._embeddedItems;
-            $scope.processedResponse = angular.toJson(processedResponse, true);
         });
     });
